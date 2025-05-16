@@ -10,6 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Open+Sans&display=swap"
     rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.7.32/sweetalert2.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.7.32/sweetalert2.all.min.js"></script>
 </head>
 
 <body>
@@ -158,7 +160,7 @@
 
     <section id="suscribete" class="card seccion fondo-azul" data-aos="fade-up">
       <h2>Suscríbete para más recetas</h2>
-      <form class="formulario" onsubmit="return guardarLead()">
+      <form class="formulario" onsubmit="guardarLead(event)">
         <input type="text" id="nombre" placeholder="Nombre" required />
         <input type="email" id="email" placeholder="Email" required />
         <button type="submit">Suscribirse</button>

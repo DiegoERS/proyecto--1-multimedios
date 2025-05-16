@@ -109,9 +109,82 @@ function cerrarModal() {
 }
 
 
-function guardarLead() {
+async function guardarLead(event) {
+  // Prevenir que el formulario recargue la página
+  event.preventDefault();
+  
   const nombre = document.getElementById("nombre").value;
   const email = document.getElementById("email").value;
-  alert(`Gracias por suscribirte, ${nombre}!`);
-  return false;
+  
+  // Mostrar el spinner mientras se procesa la solicitud
+  Swal.fire({
+    title: 'Enviando...',
+    text: 'Por favor espera mientras procesamos tu suscripción',
+    allowOutsideClick: false,
+    allowEscapeKey: false,
+    showConfirmButton: false,
+    willOpen: () => {
+      Swal.showLoading();
+    },
+    backdrop: true
+  });
+  
+  try {
+    const response = await fetch('https://elmichi-fdbdbxfdameec6cp.mexicocentral-01.azurewebsites.net/api/lead', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        Name: nombre,
+        Email: email
+      })
+    });
+    
+    // Cerrar el spinner de carga
+    Swal.close();
+    
+    if (response.ok) {
+      const resultado = await response.json();
+      console.log('Lead enviado exitosamente:', resultado);
+      
+      // Mostrar mensaje de éxito
+      Swal.fire({
+        title: '¡Suscripción exitosa!',
+        text: `Gracias por suscribirte, ${nombre}!`,
+        icon: 'success',
+        confirmButtonText: 'Continuar',
+        confirmButtonColor: '#3085d6'
+      });
+      
+      // Limpiar el formulario
+      document.getElementById("nombre").value = '';
+      document.getElementById("email").value = '';
+      
+      return resultado;
+    } else {
+      console.error('Error al enviar lead:', response.status);
+      Swal.fire({
+        title: 'Error',
+        text: 'No se pudo completar la suscripción. Por favor, intenta nuevamente.',
+        icon: 'error',
+        confirmButtonText: 'Aceptar',
+        confirmButtonColor: '#d33'
+      });
+      throw new Error(`Error al enviar lead: ${response.status}`);
+    }
+  } catch (error) {
+    // Asegurarse de cerrar el spinner en caso de error
+    Swal.close();
+    
+    console.error('Error en la solicitud:', error);
+    Swal.fire({
+      title: 'Error de conexión',
+      text: 'No se pudo conectar al servidor. Por favor, verifica tu conexión e intenta nuevamente.',
+      icon: 'error',
+      confirmButtonText: 'Aceptar',
+      confirmButtonColor: '#d33'
+    });
+    throw error;
+  }
 }
