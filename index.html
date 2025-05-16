@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ELMICHI | Tamal Turrialbeño</title>
+  <link rel="icon" href="img/ElMICHILogo.png" type="image/png">
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Open+Sans&display=swap"
+    rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container nav-container">
+      <img src="img/ElMICHILogo.png" alt="Logo ELMICHI" class="logo" />
+      <div class="hamburguesa" onclick="toggleMenu()">&#9776;</div>
+      <nav id="menu">
+        <a href="#inicio">Inicio</a>
+        <a href="#historia">Historia</a>
+        <a href="#ingredientes">Ingredientes</a>
+        <a href="#pasoapaso">Paso a paso</a>
+        <a href="#suscribete">Suscríbete</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero" data-aos="fade-in" data-aos-duration="2000">
+      <div class="overlay"></div>
+      <div class="container hero-content">
+        <h1>Tamal Turrialbeño</h1>
+        <p>Descubre la auténtica tradición culinaria de Turrialba</p>
+      </div>
+    </section>
+
+    <section id="historia" class="card seccion" data-aos="fade-up">
+      <h2>Historia del Tamal Turrialbeño</h2>
+      <p>El tamal turrialbeño tiene sus raíces en la tradición precolombina, pero adquirió sus características
+        distintivas a finales del siglo XIX cuando las familias de la región comenzaron a incorporar ingredientes
+        locales como el queso Turrialba, producido desde 1870 en las fértiles tierras cercanas al volcán. Durante
+        generaciones, la receta se ha transmitido oralmente, con cada familia aportando pequeñas variaciones.
+        Tradicionalmente preparado para las celebraciones navideñas, fiestas patronales y ocasiones especiales, este
+        tamal refleja la identidad cultural de Turrialba, donde la actividad agrícola y ganadera ha influido
+        profundamente en su gastronomía. La incorporación de ingredientes autóctonos y la técnica de preparación pausada
+        simbolizan la conexión profunda de los turrialbeños con su tierra y sus tradiciones.</p>
+    </section>
+
+    <section id="ingredientes" class="seccion ingredientes-section" data-aos="fade-up">
+      <div class="container">
+        <h2>Ingredientes</h2>
+        <div class="ingredientes-grid">
+          <div class="ingrediente-card" onclick="mostrarModal('masa')" data-aos="zoom-in-up">
+            <h3>2 kg de masa de maíz</h3>
+            <p>El alma del tamal, suave y húmeda, elaborada con maíz cocido y molido artesanalmente.</p>
+          </div>
+          <div class="ingrediente-card" onclick="mostrarModal('manteca')" data-aos="zoom-in-up" data-aos-delay="150">
+            <h3>500 g de manteca de cerdo</h3>
+            <p>Aporta sabor profundo y textura cremosa a la masa tradicional.</p>
+          </div>
+          <div class="ingrediente-card" onclick="mostrarModal('caldo')" data-aos="zoom-in-up" data-aos-delay="300">
+            <h3>1 litro de caldo de pollo o cerdo</h3>
+            <p>Base líquida rica en sabor que hidrata y nutre la mezcla del tamal.</p>
+          </div>
+          <div class="ingrediente-card" onclick="mostrarModal('achiote')" data-aos="zoom-in-up" data-aos-delay="450">
+            <h3>1 cucharada de achiote en pasta</h3>
+            <p>Color y aroma tradicionales que evocan la cocina autóctona costarricense.</p>
+          </div>
+          <div class="ingrediente-card" onclick="mostrarModal('cebolla')" data-aos="zoom-in-up" data-aos-delay="600">
+            <h3>2 cebollas medianas finamente picadas</h3>
+            <p>Un sofrito base que equilibra dulzor y profundidad en el guiso.</p>
+          </div>
+          <div class="ingrediente-card" onclick="mostrarModal('ajo')" data-aos="zoom-in-up" data-aos-delay="750">
+            <h3>4 dientes de ajo machacados</h3>
+            <p>Toque aromático fundamental que potencia todos los sabores.</p>
+          </div>
+          <div class="ingrediente-card" onclick="mostrarModal('chile')" data-aos="zoom-in-up" data-aos-delay="900">
+            <h3>1 chile dulce rojo finamente picado</h3>
+            <p>Aporta frescura, color y una dulzura natural sutil.</p>
+          </div>
+          <div class="ingrediente-card" onclick="mostrarModal('culantro')" data-aos="zoom-in-up" data-aos-delay="1050">
+            <h3>1 rollo de culantro de coyote picado</h3>
+            <p>Hierba autóctona con aroma intenso, sello del sabor turrialbeño.</p>
+          </div>
+          <div class="ingrediente-card" onclick="mostrarModal('carnecerdo')" data-aos="zoom-in-up"
+            data-aos-delay="1200">
+            <h3>500 g de carne de cerdo en trozos pequeños</h3>
+            <p>Jugosa, tierna y sazonada, corazón del relleno.</p>
+          </div>
+          <div class="ingrediente-card" onclick="mostrarModal('queso')" data-aos="zoom-in-up" data-aos-delay="1350">
+            <h3>300 g de queso Turrialba semi-maduro</h3>
+            <p>Delicado y lácteo, se funde suavemente aportando identidad local.</p>
+          </div>
+          <div class="ingrediente-card" onclick="mostrarModal('arroz')" data-aos="zoom-in-up" data-aos-delay="1500">
+            <h3>250 g de arroz precocido</h3>
+            <p>Complemento suave y absorbente que equilibra la textura general.</p>
+          </div>
+          <div class="ingrediente-card" onclick="mostrarModal('garbanzos')" data-aos="zoom-in-up" data-aos-delay="1650">
+            <h3>150 g de garbanzos cocidos</h3>
+            <p>Toque rústico y nutritivo que aporta firmeza al bocado.</p>
+          </div>
+          <div class="ingrediente-card" onclick="mostrarModal('zanahoria')" data-aos="zoom-in-up" data-aos-delay="1800">
+            <h3>100 g de zanahoria en cubitos</h3>
+            <p>Color y dulzura natural que enriquecen el perfil del relleno.</p>
+          </div>
+          <div class="ingrediente-card" onclick="mostrarModal('papa')" data-aos="zoom-in-up" data-aos-delay="1950">
+            <h3>100 g de papa en cubitos</h3>
+            <p>Suavidad terrosa y ligereza para un equilibrio perfecto.</p>
+          </div>
+          <div class="ingrediente-card" onclick="mostrarModal('salpimienta')" data-aos="zoom-in-up"
+            data-aos-delay="2100">
+            <h3>Sal y pimienta al gusto</h3>
+            <p>Esenciales para realzar y armonizar cada sabor.</p>
+          </div>
+          <div class="ingrediente-card" onclick="mostrarModal('hojas')" data-aos="zoom-in-up" data-aos-delay="2250">
+            <h3>Hojas de plátano soasadas</h3>
+            <p>Envoltorio ancestral que aporta aroma y tradición.</p>
+          </div>
+          <div class="ingrediente-card" onclick="mostrarModal('pabilo')" data-aos="zoom-in-up" data-aos-delay="2400">
+            <h3>Pabilo o mecate para amarrar</h3>
+            <p>El toque final para asegurar y dar forma al tamal turrialbeño.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pasoapaso" class="card seccion pasos" data-aos="fade-up">
+      <h2>Paso a paso</h2>
+      <div class="paso" data-aos="fade-up">1. Preparación del caldo saborizado: En una olla grande, caliente un poco de
+        manteca y sofría la mitad de la cebolla, ajo y chile dulce hasta que estén transparentes. Agregue el achiote
+        disuelto en un poco de caldo y cocine la carne de cerdo hasta que esté tierna. Reserve el caldo colado para la
+        masa.</div>
+      <div class="paso" data-aos="fade-up">2. Elaboración de la masa: En una olla amplia, derrita la manteca de cerdo
+        restante a fuego medio. Disuelva el achiote restante y añada la masa de maíz gradualmente, mezclando
+        constantemente. Incorpore el caldo caliente poco a poco hasta obtener una consistencia suave y cremosa. Cocine a
+        fuego lento por aproximadamente 30 minutos, revolviendo constantemente para evitar que se pegue. La masa estará
+        lista cuando se despegue fácilmente de los bordes de la olla.</div>
+      <div class="paso" data-aos="fade-up">3. Preparación del relleno: En una sartén aparte, sofría el resto de la
+        cebolla, ajo y chile dulce. Añada las zanahorias y papas en cubitos, cocinando hasta que estén ligeramente
+        suaves. Incorpore los garbanzos cocidos, el arroz precocido y el culantro. Sazone con sal y pimienta al gusto.
+      </div>
+      <div class="paso" data-aos="fade-up">4. Armado de los tamales: Corte las hojas de plátano en rectángulos de
+        aproximadamente 30x25 cm. Coloque una porción de masa (aproximadamente 3 cucharadas) en el centro de la hoja,
+        aplanándola ligeramente. Añada una porción del relleno, un trozo de carne de cerdo y una tira de queso
+        Turrialba.</div>
+      <div class="paso" data-aos="fade-up">5. Envoltura tradicional: Doble los extremos de la hoja de plátano para
+        formar un paquete rectangular, asegurándose de que el relleno quede bien contenido. Amarre con pabilo formando
+        "piñas" de dos tamales.</div>
+      <div class="paso" data-aos="fade-up">6. Cocción: En una olla grande con agua hirviendo, cocine los tamales por
+        aproximadamente 1.5 horas. Asegúrese de que los tamales estén completamente sumergidos en el agua durante la
+        cocción.</div>
+      <div class="paso" data-aos="fade-up">7. Servicio: Deje reposar los tamales por 10 minutos antes de desenvolver.
+        Tradicionalmente se sirven calientes, acompañados de salsa de chile panameño o chilero casero.</div>
+    </section>
+
+    <section id="suscribete" class="card seccion fondo-azul" data-aos="fade-up">
+      <h2>Suscríbete para más recetas</h2>
+      <form class="formulario" onsubmit="return guardarLead()">
+        <input type="text" id="nombre" placeholder="Nombre" required />
+        <input type="email" id="email" placeholder="Email" required />
+        <button type="submit">Suscribirse</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer" data-aos="fade-up" data-aos-duration="1000">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="img/ElMICHILogo.png" alt="Logo ELMICHI" />
+      </div>
+      <p class="footer-text">&copy; 2025 ELMICHI. Tradición con alma turrialbeña.</p>
+      <div class="footer-aliados">
+        <img src="img/ElGUCHELogo.png" alt="ELGUCHE.COM" />
+        <img src="img/DONPEPELogo.png" alt="DONPEPE.COM" />
+      </div>
+    </div>
+  </footer>
+
+  <div id="modal" class="modal">
+    <div class="modal-contenido">
+      <span class="cerrar" onclick="cerrarModal()">&times;</span>
+      <p id="modal-texto"></p>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/script.js"></script>
+  <script>AOS.init({ duration: 1200 });</script>
+</body>
+
+</html>
