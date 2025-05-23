@@ -109,6 +109,34 @@ function cerrarModal() {
 }
 
 
+  document.addEventListener('DOMContentLoaded', () => {
+    const secciones = document.querySelectorAll('main section[id]');
+    const enlacesNav = document.querySelectorAll('nav a');
+
+    function activarLinkEnScroll() {
+      let scrollY = window.pageYOffset;
+
+      secciones.forEach(seccion => {
+        const seccionTop = seccion.offsetTop - 230; // Ajusta el desplazamiento según el tamaño del encabezado
+        const seccionAltura = seccion.offsetHeight;
+        const seccionId = seccion.getAttribute('id');
+
+        if (scrollY >= seccionTop && scrollY < seccionTop + seccionAltura) {
+          enlacesNav.forEach(link => {
+            link.classList.remove('activo');
+            if (link.getAttribute('href') === '#' + seccionId) {
+              link.classList.add('activo');
+            }
+          });
+        }
+      });
+    }
+
+    window.addEventListener('scroll', activarLinkEnScroll);
+    activarLinkEnScroll(); // Llamada inicial
+  });
+
+
 async function guardarLead(event) {
   // Prevenir que el formulario recargue la página
   event.preventDefault();

@@ -44,6 +44,19 @@ main {
   flex-wrap: wrap;
 }
 
+.logo-contenedor {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espacio entre el logo y el texto */
+}
+
+.nombre-sitio {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
 .logo {
   height: 60px;
 }
@@ -80,6 +93,13 @@ nav a:hover {
 nav a:hover::after {
   width: 100%;
 }
+
+nav a.activo {
+  font-weight: bold;
+  border-bottom: 2px solid var(--verde); /* o cualquier otro estilo visual */
+  color: var(--verde);
+}
+
 section {
   scroll-margin-top: 125px; /* ajusta según el alto real del navbar */
 }
@@ -88,8 +108,18 @@ section {
   display: none;
   font-size: 2em;
   cursor: pointer;
-  color: white;
+  color: #9DBFA2; /* Color secundario */
+  transition: color 0.3s ease;
 }
+
+.hamburguesa:hover {
+  color: #65C573; /* Color hover */
+}
+
+.hamburguesa.activo {
+  color: #029918; /* Color activo */
+}
+
 
 /* Hero */
 .hero {
@@ -143,7 +173,7 @@ body::before {
   max-width: 900px;
 }
 .ingredientes-section {
-  background: url('img/background.png') center/cover no-repeat;
+  background: url('../img/background.png') center/cover no-repeat;
   padding: 4em 2em;
   position: relative;
   z-index: 1;
