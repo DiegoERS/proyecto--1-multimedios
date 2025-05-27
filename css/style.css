@@ -332,6 +332,38 @@ button:hover {
   to { opacity: 1; transform: translateY(0); }
 }
 
+.flecha-desliza {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 1em;
+  color: var(--verde);
+}
+
+.flecha-desliza .flecha {
+  display: block;
+  font-size: 2em;
+  margin-top: 0.3em;
+  animation: bounce 2s infinite;
+  text-decoration: none;
+  color: var(--verde);
+}
+
+.flecha-desliza .flecha:hover {
+  color: #029918;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
 .cerrar {
   float: right;
   font-size: 1.5em;
