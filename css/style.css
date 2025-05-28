@@ -19,6 +19,10 @@ body {
   color: #2f3e46;
 }
 
+a{
+  text-decoration: none;
+}
+
 main {
   padding-top: 80px;
 }
@@ -382,6 +386,80 @@ button:hover {
 .pasos .paso.aos-animate {
   opacity: 1;
   transform: translateY(0);
+}
+
+.footer-politicas {
+  text-align: center;
+  margin-top: 1em;
+}
+
+.footer-politicas a {
+  color: var(--verde);
+  text-decoration: underline;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+#modal-legal {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  /* Centrado con Flexbox */
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-legal-contenido {
+  background-color: var(--blanco);
+  color: var(--azul);
+  padding: 2em;
+  border-radius: 10px;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.legal-texto h3 {
+  font-family: var(--serif);
+  margin-top: 1.2em;
+}
+
+.legal-texto p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.legal-texto .actualizacion {
+  margin-top: 2em;
+  font-size: 0.85rem;
+  color: var(--gris);
+}
+
+.modal-legal-contenido::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-legal-contenido::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.modal-legal-contenido::-webkit-scrollbar-thumb {
+  background-color: #4a635e; /* tono oscuro verde/gris del sitio */
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+/* Firefox */
+.modal-legal-contenido {
+  scrollbar-width: thin;
+  scrollbar-color: #4a635e transparent;
 }
 
 /* Responsive */

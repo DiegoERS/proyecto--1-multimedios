@@ -216,3 +216,22 @@ async function guardarLead(event) {
     throw error;
   }
 }
+
+
+
+function abrirModalLegal() {
+  document.getElementById("modal-legal").style.display = "flex";
+}
+
+function cerrarModalLegal() {
+  document.getElementById("modal-legal").style.display = "none";
+}
+
+// Cerrar al hacer clic fuera del modal
+window.addEventListener("click", function (event) {
+  const modal = document.getElementById("modal-legal");
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+});
+
